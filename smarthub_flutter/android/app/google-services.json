@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "632129442438",
+    "project_id": "hubminds-9017f",
+    "storage_bucket": "hubminds-9017f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632129442438:android:4cc725b7362b3cea99f707",
+        "android_client_info": {
+          "package_name": "com.example.smarthub_flutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632129442438-cm2vnf7i9gpdcoqucsghjfknb9vhu3n1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqZzl5_laPXACHBxWafM5evRJ4sN0tH7E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632129442438-cm2vnf7i9gpdcoqucsghjfknb9vhu3n1.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "632129442438-4leqquucbq27smh4tp0n7l66d5fcs7rl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.smarthubFlutter"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
