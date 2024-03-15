@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import '../extensions/animated_list_state_extension.dart';
 import 'package:logger/logger.dart';
+import 'grid/bus_screen.dart';
+import 'grid/calendar_screen.dart';
+import 'grid/news_screen.dart';
+import 'grid/weather_screen.dart';
 
 var logger = Logger();
 
@@ -157,27 +161,61 @@ class _HomeScreenState extends State<HomeScreen> {
             // Perform some actions when the drag is finished
             logger.i('Dragged ${items[index]} to ${details.offset}');
           },
-          child: Card(
-            // Use a Card as the child when not dragging
-            margin: const EdgeInsets.all(8),
-            elevation: 4,
-            child: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(icons[index], size: 48, color: Colors.lightBlueAccent),
-                  const SizedBox(height: 8),
-                  Text(
-                    items[index],
-                    style: TextStyle(
-                      color: Theme.of(context)
-                          .colorScheme
-                          .onSurface, // Use the color scheme to change the color according to the theme mode
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
+          child: GestureDetector(
+            onTap: () {
+              switch (items[index]) {
+                case 'Bus Routes':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const BusScreen()),
+                  );
+                  break;
+                case 'News':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const NewsScreen()),
+                  );
+                  break;
+                case 'Weather':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const WeatherScreen()),
+                  );
+                  break;
+                case 'Calendar':
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const CalendarScreen()),
+                  );
+                  break;
+                default:
+                  break;
+              }
+            },
+            child: Card(
+              // Use a Card as the child when not dragging
+              margin: const EdgeInsets.all(8),
+              elevation: 4,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(icons[index], size: 48, color: Colors.lightBlueAccent),
+                    const SizedBox(height: 8),
+                    Text(
+                      items[index],
+                      style: TextStyle(
+                        color: Theme.of(context)
+                            .colorScheme
+                            .onSurface, // Use the color scheme to change the color according to the theme mode
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
           ),
