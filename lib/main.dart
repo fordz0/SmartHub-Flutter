@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_config/flutter_config.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'firebase_options.dart';
 import 'screens/login_screen.dart';
 import 'screens/home_screen.dart'; // for testing home screen
@@ -7,6 +9,7 @@ import 'screens/home_screen.dart'; // for testing home screen
 void main() async {
   WidgetsFlutterBinding
       .ensureInitialized(); // Ensure flutter bindings are initialized
+  await FlutterConfig.loadEnvVariables(); // Load environment variables
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
